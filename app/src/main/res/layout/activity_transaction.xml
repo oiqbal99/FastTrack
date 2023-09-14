@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="@drawable/regularwallpaper"
+    tools:context=".Transaction">
+
+
+    <TextView
+        android:id="@+id/new_transaction_title"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_gravity="center"
+        android:text="New Transaction"
+        android:layout_margin="20dp"
+        android:textColor="#0B0B0B"
+        android:textSize="36sp"
+        />
+
+
+    <EditText
+        android:id="@+id/amount_in"
+        android:layout_width="312dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edit_text_border"
+        android:fontFamily="@font/oxygen"
+        android:hint="Amount" />
+
+    <EditText
+        android:id="@+id/description_input"
+        android:layout_width="312dp"
+        android:layout_height="52dp"
+        android:background="@drawable/edit_text_border"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/oxygen"
+        android:hint="Description"
+        android:inputType="textPersonName" />
+
+
+    <Switch
+        android:id="@+id/recurring_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:buttonTint="@color/purple_200"
+        android:checked="false"
+        android:text="Recurring"
+        android:textColor="#000000"
+        android:textColorLink="#FFFFFF"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <LinearLayout
+            android:id="@+id/repeat_every_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+                <TextView
+                android:id="@+id/textView6"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Repeat"
+                />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+
+            android:id="@+id/timeframe_select"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:background="@drawable/spinner_custom"
+            android:entries="@array/time_frame"
+            android:layout_height="45dp"
+            >
+
+        </androidx.appcompat.widget.AppCompatSpinner>
+
+         </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/radio_button_layouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:layout_marginEnd="50dp"
+            >
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Occurrences"
+                android:onClick="OnRadioButtonClick"
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:buttonTint="@color/purple_200"
+                android:onClick="OnRadioButtonClick"
+                />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginEnd="2dp">
+            <EditText
+                android:id="@+id/endBy"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_border"
+                android:hint="X Occurrences"
+                android:layout_marginEnd="14dp"
+                android:layout_marginTop="3dp"
+                android:inputType="number"
+                />
+
+            <EditText
+                android:id="@+id/date_end"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_border"
+                android:hint="End (MM/dd/yyyy)"
+                android:textSize="15sp"
+
+                android:visibility="invisible"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="7dp"
+                android:inputType="date"
+
+                />
+            <EditText
+                android:id="@+id/start_date"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_border"
+                android:hint="Start (MM/dd/yyyy)"
+                android:textSize="15sp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="10dp"
+                android:inputType="date"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/add_Income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen"
+            android:text="Income"
+            android:layout_margin="15dp"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            app:backgroundTint="#89CCBB"
+            />
+
+        <Button
+            android:id="@+id/add_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/oxygen"
+            android:text="expense"
+            android:textSize="15sp"
+
+            app:backgroundTint="#855CF8" />
+
+    </LinearLayout>
+</LinearLayout>
